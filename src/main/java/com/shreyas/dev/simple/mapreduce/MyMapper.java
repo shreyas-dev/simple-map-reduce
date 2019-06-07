@@ -25,19 +25,25 @@ public class MyMapper extends Mapper<LongWritable, Text,Text, IntWritable> {
 
         /*  Key will be the byteoffet
             Value will be complete line
-            Ex:     This is Shreyas
+            Ex 1:     This is Shreyas
                     key     => 0
                     value   => This is Shreyas
 
+            Ex 2: Can you do me a favour by giving me your pen?
+
             StringTokenizer takes a sentence and converts it to words.
-            itr will contain ["This","is","Shreyas"]
+            itr will contain ["This","is","Shreyas"] and [""]
         */
         StringTokenizer itr =   new StringTokenizer(value.toString());
         while ( itr.hasMoreTokens() ){
+
+            //Convert String to Text Hadoop Wrapper
             word.set(itr.nextToken());
+
             // Each word will be initialized with 1
             //  This => 1 is => 1 Shreyas => 1
             context.write(word,new IntWritable(1));
+
         }
     }
 }

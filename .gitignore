@@ -26,5 +26,10 @@ hs_err_pid*
 #Idea files
 .idea/*
 
+//Output Files
+out/*
+
+.DS_Store
+
 *.iml
 =======
