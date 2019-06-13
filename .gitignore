@@ -26,8 +26,11 @@ hs_err_pid*
 #Idea files
 .idea/*
 
-//Output Files
+#Output Files
 out/*
+
+#Target Files
+target/
 
 .DS_Store
 
