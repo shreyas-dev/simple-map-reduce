@@ -17,6 +17,12 @@ import java.io.IOException;
 public class WordCount {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         JobConf conf=new JobConf();
+
+        String[] otherArgs = new GenericOptionsParser(conf,args).getRemainingArgs();
+        if (otherArgs.length < 2 ){
+            System.err.println("Usage: wordcount <in> [<in> ...] <out>");
+            System.exit(2);
+        }
         //Job Name
         conf.setJobName("wordcount");
         //Setting the output key and value
@@ -27,10 +33,10 @@ public class WordCount {
 
 
         //Input file location
-        FileInputFormat.setInputPaths(conf, new Path(args[0]));
+        FileInputFormat.setInputPaths(conf, new Path(otherArgs[0]));
 
         //Output file location
-        FileOutputFormat.setOutputPath(Job.getInstance(conf), new Path(args[1]));
+        FileOutputFormat.setOutputPath(Job.getInstance(conf), new Path(otherArgs[1]));
         Job job=new Job(conf);
 
         //Setting the Main Class which contains main method
