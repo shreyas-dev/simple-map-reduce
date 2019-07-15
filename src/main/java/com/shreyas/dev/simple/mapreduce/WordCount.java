@@ -40,7 +40,7 @@ public class WordCount {
 
         //Output file location
         FileOutputFormat.setOutputPath(Job.getInstance(conf), new Path(args[1]));
-        Job job=new Job(conf);
+        Job job=Job.getInstance(conf);
 
         //Setting the Main Class which contains main method
         job.setJarByClass(WordCount.class);
