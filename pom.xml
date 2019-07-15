@@ -31,7 +31,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fully.qualified.MainClass</mainClass>
+                            <mainClass>com.shreyas.dev.simple.mapreduce</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
