@@ -36,5 +36,11 @@ target/
 
 .DS_Store
 
+=======
+
+//Output Files
+out/*
+
+.DS_Store
 *.iml
 =======
